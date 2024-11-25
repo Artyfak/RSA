@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rsa.RSAController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rsa.RSAController">
    <children>
-      <TextField layoutX="23.0" layoutY="26.0" />
-      <Button layoutX="191.0" layoutY="26.0" mnemonicParsing="false" text="Button" />
+      <TextField fx:id="inputText" layoutX="30.0" layoutY="30.0" onKeyTyped="#handleTf" prefHeight="25.0" prefWidth="540.0" promptText="Zadaj text na šifrovanie" />
+      <Button layoutX="260.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleButton" text="Vytvor kľúče" />
+      <Text layoutX="289.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RSA" />
+      <Text layoutX="29.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verejný kľúč" textAlignment="CENTER" wrappingWidth="186.13671875" />
+      <Text layoutX="382.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Súkromný kľúč" textAlignment="CENTER" wrappingWidth="186.13671875" />
+      <TextArea fx:id="VK" editable="false" layoutX="22.0" layoutY="153.0" prefHeight="17.0" prefWidth="200.0" />
+      <TextArea fx:id="SK" editable="false" layoutX="375.0" layoutY="152.0" prefHeight="17.0" prefWidth="200.0" />
+      <Text layoutX="275.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modulus" textAlignment="CENTER" />
+      <TextArea fx:id="modulus" editable="false" layoutX="22.0" layoutY="212.0" prefHeight="38.0" prefWidth="553.0" />
+      <TextArea fx:id="chunks" editable="false" layoutX="23.0" layoutY="281.0" prefHeight="52.0" prefWidth="553.0" />
+      <Text layoutX="104.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rozkúskovanie po 7 znakov do binarnej a nasledne do decimalnej sústavy" />
+      <TextArea fx:id="sif" layoutX="23.0" layoutY="369.0" prefHeight="52.0" prefWidth="553.0" />
+      <Text layoutX="273.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Šifrovanie" />
+      <TextArea fx:id="desifta" layoutX="23.0" layoutY="449.0" prefHeight="87.0" prefWidth="553.0" />
+      <Text layoutX="267.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dešifrovanie" />
+      <Text layoutX="93.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prvočíslo P" />
+      <Text layoutX="445.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prvočíslo Q" />
+      <TextArea fx:id="pp" layoutX="22.0" layoutY="87.0" prefHeight="38.0" prefWidth="200.0" />
+      <TextArea fx:id="pq" layoutX="375.0" layoutY="87.0" prefHeight="38.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
